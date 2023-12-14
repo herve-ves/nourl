@@ -96,6 +96,10 @@ impl<'a> Url<'a> {
             Ok(UrlScheme::HTTP)
         } else if scheme.eq_ignore_ascii_case("https") {
             Ok(UrlScheme::HTTPS)
+        } else if scheme.eq_ignore_ascii_case("mqtt") {
+            Ok(UrlScheme::MQTT)
+        } else if scheme.eq_ignore_ascii_case("mqtts") {
+            Ok(UrlScheme::MQTTS)
         } else {
             Err(Error::UnsupportedScheme)
         }?;
